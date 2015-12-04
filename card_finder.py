@@ -9,16 +9,20 @@ def normalize(text):
 
 def card_list_search(card_list, card_json):
     with open(card_list, 'r') as card_file:
-        for line in card_file:
-            single_card_search(line, card_json)
+        with open('card_list.csv', 'w') as csvfile:
+            for line in card_file:
+                booster = single_card_search(line, card_json)
+                csvfile.write('{}, {}\n'.format(line.replace('\n', ''), booster))
 
 
 def single_card_search(card_name, card_json):
     try:
         booster = card_json[normalize(card_name)]
         print '{} - {}'.format(card_name.replace('\n', ''), booster)
+        return booster
     except KeyError as e:
         print '*** COULD NOT FIND {} ***'.format(card_name.replace('\n', ''))
+        return 'Not Found'
 
 
 def main():

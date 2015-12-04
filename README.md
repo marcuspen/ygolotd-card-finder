@@ -33,6 +33,7 @@ python card_finder.py -f my-deck-list.txt
 ```
 The above example works if your card list is named `my-deck-list.txt`.
 Ensure that each card on your list is line separated (each card on a different line).
+This will also make a csv file to allow you to open the output as a spreadsheet. It saves it as `card_list.csv`.
 
 #### Search for a single card
 ```
