@@ -26,10 +26,19 @@ git --version
 ```
 git clone git@github.com:marcuspen/ygolotd-card-finder.git
 cd ygolotd-card-finder/
+```
+#### Search using a card list
+```
 python card_finder.py -f my-deck-list.txt
 ```
 The above example works if your card list is named `my-deck-list.txt`.
 Ensure that each card on your list is line seperated (each card on a different line).
+
+#### Search for a single card
+```
+python card_finder.py -c "Raigeki"
+```
+Ensure that the name of the card is in quotes for card names with multiple words.
 
 ## Updates
 
